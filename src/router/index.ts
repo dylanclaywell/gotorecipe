@@ -1,0 +1,24 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '@/views/HomeView.vue'
+
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomeView,
+    },
+    {
+      path: '/recipe',
+      name: 'recipe',
+      // Lazy-loaded: keeps the landing page bundle tiny.
+      component: () => import('@/views/RecipeView.vue'),
+    },
+  ],
+  scrollBehavior() {
+    return { top: 0 }
+  },
+})
+
+export default router
