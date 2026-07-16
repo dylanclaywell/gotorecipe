@@ -13,7 +13,7 @@
     "lint:check": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "vue-tsc -b --noEmit && tsc --noEmit -p tsconfig.functions.json"
+    "typecheck": "vue-tsc -b --noEmit && tsc --noEmit -p functions/tsconfig.json"
   },
   "dependencies": {
     "pinia": "^2.2.8",
