@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import EggMark from '@/components/EggMark.vue'
+import LogoMark from '@/components/LogoMark.vue'
 </script>
 
 <template>
@@ -14,7 +14,7 @@ import EggMark from '@/components/EggMark.vue'
           class="press flex items-center gap-2.5 hover:-translate-y-0.5"
           aria-label="GoToRecipe home"
         >
-          <EggMark class="h-9 w-9" />
+          <LogoMark class="h-9 w-9" />
           <span
             class="font-display text-xl tracking-tight text-ink sm:text-2xl"
           >
