@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue'
 import type { SavedRecipe } from '@/lib/types'
 import { hostOf } from '@/lib/format'
+import ConfirmDialog from '@/components/ConfirmDialog.vue'
 
-defineProps<{
+const props = defineProps<{
   title: string
   items: SavedRecipe[]
   icon?: string
@@ -14,6 +16,32 @@ const emit = defineEmits<{
   remove: [url: string]
   clear: []
 }>()
+
+// A pending destructive action awaiting confirmation.
+type Pending = { type: 'remove'; url: string } | { type: 'clear' }
+const pending = ref<Pending | null>(null)
+
+const confirmMessage = computed(() => {
+  const p = pending.value
+  if (!p) return ''
+  if (p.type === 'clear') {
+    return `Clear all ${props.title.toLowerCase()} recipes? This can't be undone.`
+  }
+  const match = props.items.find((i) => i.recipe.sourceUrl === p.url)
+  return `Remove “${match?.recipe.title ?? 'this recipe'}”?`
+})
+
+const confirmLabel = computed(() =>
+  pending.value?.type === 'clear' ? 'Clear' : 'Remove',
+)
+
+function onConfirm() {
+  const p = pending.value
+  pending.value = null
+  if (!p) return
+  if (p.type === 'clear') emit('clear')
+  else emit('remove', p.url)
+}
 </script>
 
 <template>
@@ -29,7 +57,7 @@ const emit = defineEmits<{
         v-if="items.length"
         type="button"
         class="font-mono text-xs text-ink/60 underline decoration-2 underline-offset-2 hover:text-tomato"
-        @click="emit('clear')"
+        @click="pending = { type: 'clear' }"
       >
         {{ clearLabel ?? 'Clear all' }}
       </button>
@@ -57,11 +85,19 @@ const emit = defineEmits<{
           type="button"
           :aria-label="`Remove ${item.recipe.title}`"
           class="shrink-0 rounded-sm border-2 border-ink px-2 py-0.5 font-mono text-xs hover:bg-tomato hover:text-paper"
-          @click="emit('remove', item.recipe.sourceUrl)"
+          @click="pending = { type: 'remove', url: item.recipe.sourceUrl }"
         >
           ✕
         </button>
       </li>
     </ul>
+
+    <ConfirmDialog
+      :open="pending !== null"
+      :message="confirmMessage"
+      :confirm-label="confirmLabel"
+      @confirm="onConfirm"
+      @cancel="pending = null"
+    />
   </section>
 </template>
