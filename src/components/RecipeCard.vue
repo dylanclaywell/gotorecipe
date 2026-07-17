@@ -2,8 +2,11 @@
 import { reactive, ref } from 'vue'
 import type { Recipe } from '@/lib/types'
 import { formatDuration, hostOf } from '@/lib/format'
+import { useRecipeStore } from '@/stores/recipes'
 
 const props = defineProps<{ recipe: Recipe }>()
+
+const store = useRecipeStore()
 
 // Cooking helper: tap an ingredient or step to cross it off. Purely local.
 function useChecklist() {
@@ -52,13 +55,28 @@ function print() {
           {{ hostOf(recipe.sourceUrl) }} ↗
         </a>
       </div>
-      <button
-        type="button"
-        class="press no-print shrink-0 rounded-md border-2 border-ink bg-paper px-4 py-2 font-display text-sm tracking-tight shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)]"
-        @click="print"
-      >
-        Print
-      </button>
+      <div class="no-print flex shrink-0 gap-2">
+        <button
+          type="button"
+          :aria-pressed="store.isSaved(recipe.sourceUrl)"
+          :class="
+            store.isSaved(recipe.sourceUrl)
+              ? 'bg-ink text-paper'
+              : 'bg-paper text-ink'
+          "
+          class="press rounded-md border-2 border-ink px-4 py-2 font-display text-sm tracking-tight shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)]"
+          @click="store.toggleSave(recipe)"
+        >
+          {{ store.isSaved(recipe.sourceUrl) ? '★ Saved' : '☆ Save' }}
+        </button>
+        <button
+          type="button"
+          class="press rounded-md border-2 border-ink bg-paper px-4 py-2 font-display text-sm tracking-tight text-ink shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)]"
+          @click="print"
+        >
+          Print
+        </button>
+      </div>
     </header>
 
     <!-- Dish photo -->

@@ -2,12 +2,12 @@
 import { useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import UrlInput from '@/components/UrlInput.vue'
-import HistoryList from '@/components/HistoryList.vue'
+import RecipeList from '@/components/RecipeList.vue'
 import { useRecipeStore } from '@/stores/recipes'
 
 const router = useRouter()
 const store = useRecipeStore()
-const { history } = storeToRefs(store)
+const { history, saved } = storeToRefs(store)
 
 function go(url: string) {
   router.push({ name: 'recipe', query: { url } })
@@ -45,6 +45,26 @@ function go(url: string) {
       <li>→ Installable app</li>
     </ul>
 
-    <HistoryList v-if="history.length" class="mt-4" @open="go" />
+    <RecipeList
+      v-if="saved.length"
+      title="Saved"
+      icon="★"
+      clear-label="Clear saved"
+      :items="saved"
+      class="mt-4"
+      @open="go"
+      @remove="store.unsave"
+      @clear="store.clearSaved()"
+    />
+
+    <RecipeList
+      v-if="history.length"
+      title="Recent"
+      icon="🕘"
+      :items="history"
+      @open="go"
+      @remove="store.forget"
+      @clear="store.clearHistory()"
+    />
   </section>
 </template>
