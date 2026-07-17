@@ -10,3 +10,7 @@ dist-ssr
 *.log
 .vscode/*
 !.vscode/extensions.json
+
+# Julie code-intelligence tooling (local, not part of the app)
+.julie/
+.julieignore
