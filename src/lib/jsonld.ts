@@ -85,14 +85,6 @@ function firstImage(v: Json): string | undefined {
   return undefined
 }
 
-function authorName(v: Json): string | undefined {
-  const first = asArray(v)[0]
-  if (typeof first === 'string') return clean(first)
-  if (isObject(first) && typeof first.name === 'string')
-    return clean(first.name)
-  return undefined
-}
-
 /** Flatten recipeInstructions: strings, HowToStep, and HowToSection. */
 function instructionList(v: Json): string[] {
   const out: string[] = []
@@ -121,9 +113,7 @@ function ingredientList(v: Json): string[] {
 export function normalizeRecipe(node: JsonObject, sourceUrl: string): Recipe {
   return {
     title: textOf(node.name) ?? 'Untitled recipe',
-    description: textOf(node.description),
     image: firstImage(node.image),
-    author: authorName(node.author),
     sourceUrl,
     yield: textOf(asArray(node.recipeYield)[0]) ?? textOf(node.recipeYield),
     prepTime: typeof node.prepTime === 'string' ? node.prepTime : undefined,

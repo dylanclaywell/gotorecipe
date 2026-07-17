@@ -1,8 +1,6 @@
 export interface Recipe {
   title: string
-  description?: string
   image?: string
-  author?: string
   sourceUrl: string
   yield?: string
   prepTime?: string
