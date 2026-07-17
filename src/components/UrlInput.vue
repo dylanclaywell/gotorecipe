@@ -46,7 +46,7 @@ async function paste() {
       />
       <button
         type="button"
-        class="press absolute right-2 top-1/2 -translate-y-1/2 rounded-sm border-2 border-ink bg-smoke px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wide hover:-translate-y-[calc(50%+2px)] hover:shadow-[var(--shadow-hard-sm)]"
+        class="press absolute right-2 top-1/2 -translate-y-1/2 rounded-sm border-2 border-ink bg-smoke px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wide hover:-translate-y-[calc(50%+2px)] hover:shadow-[var(--shadow-hard-sm)] active:-translate-y-1/2 active:shadow-none"
         @click="paste"
       >
         Paste
