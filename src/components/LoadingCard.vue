@@ -8,11 +8,11 @@ defineProps<{ host: string }>()
       Decluttering <span class="text-ink">{{ host }}</span
       >…
     </p>
-    <div class="h-9 w-3/4 animate-pulse rounded-sm bg-smoke" />
+    <div class="h-9 w-3/4 animate-pulse rounded-sm bg-muted" />
     <div class="flex flex-col gap-2.5">
-      <div class="h-4 w-full animate-pulse rounded-sm bg-smoke" />
-      <div class="h-4 w-5/6 animate-pulse rounded-sm bg-smoke" />
-      <div class="h-4 w-4/6 animate-pulse rounded-sm bg-smoke" />
+      <div class="h-4 w-full animate-pulse rounded-sm bg-muted" />
+      <div class="h-4 w-5/6 animate-pulse rounded-sm bg-muted" />
+      <div class="h-4 w-4/6 animate-pulse rounded-sm bg-muted" />
     </div>
     <span class="sr-only">Loading recipe</span>
   </div>

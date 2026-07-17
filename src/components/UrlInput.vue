@@ -46,7 +46,7 @@ async function paste() {
       />
       <button
         type="button"
-        class="press absolute right-2 top-1/2 -translate-y-1/2 rounded-sm border-2 border-ink bg-smoke px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wide hover:-translate-y-[calc(50%+2px)] hover:shadow-[var(--shadow-hard-sm)] active:-translate-y-1/2 active:shadow-none"
+        class="press absolute right-2 top-1/2 -translate-y-1/2 rounded-sm border-2 border-ink bg-muted px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wide hover:-translate-y-[calc(50%+2px)] hover:shadow-[var(--shadow-hard-sm)] active:-translate-y-1/2 active:shadow-none"
         @click="paste"
       >
         Paste
@@ -55,7 +55,7 @@ async function paste() {
 
     <button
       type="submit"
-      class="press flex items-center justify-center gap-2 rounded-md border-2 border-ink bg-yolk px-6 py-3.5 font-display text-lg tracking-tight text-ink shadow-[var(--shadow-hard)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard-lg)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+      class="press flex items-center justify-center gap-2 rounded-md border-2 border-ink bg-primary px-6 py-3.5 font-display text-lg tracking-tight text-on-primary shadow-[var(--shadow-hard)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard-lg)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
     >
       Go
     </button>

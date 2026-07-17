@@ -53,7 +53,7 @@ function onBackdropClick(e: MouseEvent) {
       </button>
       <button
         type="button"
-        class="press rounded-md border-2 border-ink bg-tomato px-4 py-2 font-display text-sm tracking-tight text-paper shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+        class="press rounded-md border-2 border-ink bg-danger px-4 py-2 font-display text-sm tracking-tight text-on-primary shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
         @click="emit('confirm')"
       >
         {{ confirmLabel }}

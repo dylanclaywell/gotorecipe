@@ -38,11 +38,11 @@ function print() {
   <article class="recipe card-hard shadow-(--shadow-hard-lg)">
     <!-- Header -->
     <header
-      class="flex flex-col gap-3 border-b-2 border-ink bg-yolk p-6 sm:flex-row sm:items-start sm:justify-between"
+      class="flex flex-col gap-3 border-b-2 border-ink bg-primary p-6 sm:flex-row sm:items-start sm:justify-between"
     >
       <div class="flex flex-col gap-1.5">
         <h1
-          class="font-display text-3xl leading-tight tracking-tight text-ink sm:text-4xl"
+          class="font-display text-3xl leading-tight tracking-tight text-on-primary sm:text-4xl"
         >
           {{ recipe.title }}
         </h1>
@@ -50,7 +50,7 @@ function print() {
           :href="recipe.sourceUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-fit font-mono text-sm text-ink/70 underline decoration-2 underline-offset-2 hover:text-ink"
+          class="w-fit font-mono text-sm text-on-primary/75 underline decoration-2 underline-offset-2 hover:text-on-primary"
         >
           {{ hostOf(recipe.sourceUrl) }} ↗
         </a>
@@ -129,7 +129,9 @@ function print() {
               <span
                 class="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-[3px] border-2 border-ink text-[0.6rem] leading-none"
                 :class="
-                  ingredients.done.has(i) ? 'bg-sage text-paper' : 'bg-paper'
+                  ingredients.done.has(i)
+                    ? 'bg-accent text-on-accent'
+                    : 'bg-paper'
                 "
                 aria-hidden="true"
               >
@@ -167,8 +169,8 @@ function print() {
               @click="steps.toggle(i)"
             >
               <span
-                class="grid h-8 w-8 shrink-0 place-items-center rounded-md border-2 border-ink font-display text-sm shadow-[var(--shadow-hard-sm)]"
-                :class="steps.done.has(i) ? 'bg-sage text-paper' : 'bg-yolk'"
+                class="grid h-8 w-8 shrink-0 place-items-center rounded-md border-2 border-ink font-display text-sm text-on-primary shadow-[var(--shadow-hard-sm)]"
+                :class="steps.done.has(i) ? 'bg-accent' : 'bg-primary'"
                 aria-hidden="true"
               >
                 {{ steps.done.has(i) ? '✓' : i + 1 }}

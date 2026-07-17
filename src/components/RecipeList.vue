@@ -56,7 +56,7 @@ function onConfirm() {
       <button
         v-if="items.length"
         type="button"
-        class="font-mono text-xs text-ink/60 underline decoration-2 underline-offset-2 hover:text-tomato"
+        class="font-mono text-xs text-ink/60 underline decoration-2 underline-offset-2 hover:text-danger"
         @click="pending = { type: 'clear' }"
       >
         {{ clearLabel ?? 'Clear all' }}
@@ -84,7 +84,7 @@ function onConfirm() {
         <button
           type="button"
           :aria-label="`Remove ${item.recipe.title}`"
-          class="shrink-0 rounded-sm border-2 border-ink px-2 py-0.5 font-mono text-xs hover:bg-tomato hover:text-paper"
+          class="shrink-0 rounded-sm border-2 border-ink px-2 py-0.5 font-mono text-xs hover:bg-danger hover:text-on-primary"
           @click="pending = { type: 'remove', url: item.recipe.sourceUrl }"
         >
           ✕

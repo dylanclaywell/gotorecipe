@@ -40,14 +40,14 @@ watch(
       class="card-hard flex flex-col gap-4 p-6"
       role="alert"
     >
-      <h2 class="font-display text-2xl tracking-tight text-tomato">
+      <h2 class="font-display text-2xl tracking-tight text-danger">
         No recipe here
       </h2>
       <p class="font-sans text-ink/70">{{ error }}</p>
       <div class="flex flex-wrap gap-3">
         <button
           type="button"
-          class="press rounded-md border-2 border-ink bg-yolk px-4 py-2 font-display tracking-tight shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+          class="press rounded-md border-2 border-ink bg-primary px-4 py-2 font-display tracking-tight text-on-primary shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
           @click="store.load(url)"
         >
           Try again

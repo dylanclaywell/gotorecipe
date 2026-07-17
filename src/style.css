@@ -3,13 +3,16 @@
 /* ── GoToRecipe design tokens ───────────────────────────────────────────
    Thick-lined graphic style: ink borders, hard offset shadows, no blur. */
 @theme {
-  --color-ink: #1a1712;
-  --color-paper: #fdfbf6;
-  --color-yolk: #ffc93c;
-  --color-yolk-deep: #f0a800;
-  --color-tomato: #e23b2e;
-  --color-sage: #2e5e4e;
-  --color-smoke: #e9e4d8;
+  /* Palette: Tomato & Basil. Semantic roles so a future theme swap (and the
+     favicon/manifest color) can key off one place. */
+  --color-ink: #26201a; /* warm near-black: borders, text */
+  --color-paper: #fbf4e6; /* cream: page + card background */
+  --color-primary: #db512b; /* brick tomato: header, primary CTAs, highlight */
+  --color-on-primary: #fbf4e6; /* text/icons on primary */
+  --color-accent: #6e8b4e; /* herb/basil green: done + save state */
+  --color-on-accent: #fbf4e6; /* text/icons on accent */
+  --color-danger: #b23a1d; /* deep red: destructive actions, errors */
+  --color-muted: #ebe2cd; /* warm tan: paste button, skeletons */
 
   --font-display: 'Archivo Black', system-ui, sans-serif;
   --font-sans: 'Archivo', system-ui, sans-serif;
@@ -40,7 +43,7 @@ body {
 /* Quiet, disciplined base so the signature card can be loud. */
 @layer base {
   :focus-visible {
-    outline: 3px solid var(--color-tomato);
+    outline: 3px solid var(--color-ink);
     outline-offset: 2px;
   }
 

@@ -18,14 +18,10 @@ function go(url: string) {
   <section class="flex flex-col gap-8">
     <div class="flex flex-col gap-4">
       <h1
-        class="font-display text-4xl leading-[0.95] tracking-tight text-ink sm:text-6xl"
+        class="font-display text-4xl leading-[1.15] tracking-tight text-ink sm:text-6xl"
       >
         Skip the story.<br />
-        <span class="relative inline-block">
-          <span
-            class="absolute inset-x-0 bottom-1 -z-10 h-4 bg-yolk sm:bottom-2 sm:h-6"
-            aria-hidden="true"
-          />
+        <span class="box-decoration-clone bg-primary px-2 text-on-primary">
           Get the recipe.
         </span>
       </h1>
