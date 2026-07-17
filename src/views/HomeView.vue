@@ -1,0 +1,50 @@
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+import { storeToRefs } from 'pinia'
+import UrlInput from '@/components/UrlInput.vue'
+import HistoryList from '@/components/HistoryList.vue'
+import { useRecipeStore } from '@/stores/recipes'
+
+const router = useRouter()
+const store = useRecipeStore()
+const { history } = storeToRefs(store)
+
+function go(url: string) {
+  router.push({ name: 'recipe', query: { url } })
+}
+</script>
+
+<template>
+  <section class="flex flex-col gap-8">
+    <div class="flex flex-col gap-4">
+      <h1
+        class="font-display text-4xl leading-[0.95] tracking-tight text-ink sm:text-6xl"
+      >
+        Skip the story.<br />
+        <span class="relative inline-block">
+          <span
+            class="absolute inset-x-0 bottom-1 -z-10 h-4 bg-yolk sm:bottom-2 sm:h-6"
+            aria-hidden="true"
+          />
+          Get the recipe.
+        </span>
+      </h1>
+      <p class="max-w-xl font-sans text-lg text-ink/70">
+        Paste any recipe link. GoToRecipe strips the ads, pop-ups, and
+        1,200-word backstory, then hands you the ingredients and steps.
+      </p>
+    </div>
+
+    <UrlInput autofocus @submit="go" />
+
+    <ul
+      class="flex flex-wrap gap-x-5 gap-y-1 font-mono text-xs uppercase tracking-wide text-ink/60"
+    >
+      <li>→ No account</li>
+      <li>→ No tracking</li>
+      <li>→ Installable app</li>
+    </ul>
+
+    <HistoryList v-if="history.length" class="mt-4" @open="go" />
+  </section>
+</template>
