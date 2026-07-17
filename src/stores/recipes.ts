@@ -1,29 +1,36 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import localforage from 'localforage'
 import type { Recipe, SavedRecipe } from '@/lib/types'
 import { extractRecipe } from '@/lib/api'
 
-const HISTORY_KEY = 'gotorecipe:history'
-const SAVED_KEY = 'gotorecipe:saved'
+const HISTORY_KEY = 'history'
+const SAVED_KEY = 'saved'
 const HISTORY_MAX = 25
 
 type Status = 'idle' | 'loading' | 'ready' | 'error'
 
-function loadList(key: string): SavedRecipe[] {
+// IndexedDB-backed store (localForage falls back to WebSQL/localStorage).
+// Roomier than localStorage, so history/saved can grow freely.
+const db = localforage.createInstance({
+  name: 'gotorecipe',
+  storeName: 'recipes',
+  description: 'Recent and saved recipes',
+})
+
+async function loadList(key: string): Promise<SavedRecipe[]> {
   try {
-    const raw = localStorage.getItem(key)
-    return raw ? (JSON.parse(raw) as SavedRecipe[]) : []
+    return (await db.getItem<SavedRecipe[]>(key)) ?? []
   } catch {
     return []
   }
 }
 
 function persist(key: string, list: SavedRecipe[]): void {
-  try {
-    localStorage.setItem(key, JSON.stringify(list))
-  } catch {
-    // Storage full or unavailable — these lists are a nicety, not required.
-  }
+  // Snapshot to plain objects — IndexedDB's structured clone chokes on Vue's
+  // reactive proxies. These lists are a nicety, so swallow write failures.
+  const plain = JSON.parse(JSON.stringify(list)) as SavedRecipe[]
+  void db.setItem(key, plain).catch(() => {})
 }
 
 export const useRecipeStore = defineStore('recipes', () => {
@@ -32,8 +39,17 @@ export const useRecipeStore = defineStore('recipes', () => {
   const error = ref<string | null>(null)
 
   // Recent: auto-recorded, capped, decays. Saved: curated, kept until removed.
-  const history = ref<SavedRecipe[]>(loadList(HISTORY_KEY))
-  const saved = ref<SavedRecipe[]>(loadList(SAVED_KEY))
+  const history = ref<SavedRecipe[]>([])
+  const saved = ref<SavedRecipe[]>([])
+
+  // Reads are async, so hydrate after creation rather than seeding inline.
+  // The IndexedDB read resolves long before any write (which needs a fetch).
+  void loadList(HISTORY_KEY).then((list) => {
+    history.value = list
+  })
+  void loadList(SAVED_KEY).then((list) => {
+    saved.value = list
+  })
 
   async function load(url: string): Promise<void> {
     status.value = 'loading'
