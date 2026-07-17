@@ -5,7 +5,7 @@ import EggMark from '@/components/EggMark.vue'
 
 <template>
   <div class="flex min-h-dvh flex-col">
-    <header class="border-b-2 border-ink">
+    <header class="no-print border-b-2 border-ink">
       <div
         class="mx-auto flex max-w-3xl items-center justify-between px-5 py-4"
       >
@@ -34,7 +34,7 @@ import EggMark from '@/components/EggMark.vue'
       <RouterView />
     </main>
 
-    <footer class="border-t-2 border-ink">
+    <footer class="no-print border-t-2 border-ink">
       <div
         class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-2 px-5 py-4 font-mono text-xs text-ink/60"
       >

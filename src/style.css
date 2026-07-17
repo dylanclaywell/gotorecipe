@@ -54,6 +54,19 @@ body {
   }
 }
 
+/* Print: strip the app chrome so only the recipe card lands on paper. */
+@media print {
+  @page {
+    margin: 1.5cm;
+  }
+  body {
+    background: #fff;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
 /* Reusable thick-line primitives */
 @utility card-hard {
   border: 2px solid var(--color-ink);
