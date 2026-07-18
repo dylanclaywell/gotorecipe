@@ -47,7 +47,7 @@ watch(
       <div class="flex flex-wrap gap-3">
         <button
           type="button"
-          class="rounded-md border-2 border-ink bg-primary px-4 py-2 font-display tracking-tight text-on-primary shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+          class="focus-ring rounded-md border-2 border-ink bg-primary px-4 py-2 font-display tracking-tight text-on-primary shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
           @click="store.load(url)"
         >
           Try again
@@ -56,7 +56,7 @@ watch(
           :href="url"
           target="_blank"
           rel="noopener noreferrer"
-          class="rounded-md border-2 border-ink bg-paper px-4 py-2 font-display tracking-tight shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+          class="focus-ring rounded-md border-2 border-ink bg-paper px-4 py-2 font-display tracking-tight shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
         >
           Open original ↗
         </a>
