@@ -15,6 +15,7 @@
   --color-on-accent: #fbf4e6; /* text/icons on accent */
   --color-paper-hover: #f1e8d2; /* cream hover: paper-filled buttons */
   --color-danger: #b23a1d; /* deep red: destructive actions, errors */
+  --color-danger-hover: #96311a; /* deep red hover: destructive actions */
   --color-muted: #ebe2cd; /* warm tan: paste button, skeletons */
 
   --font-display: 'Archivo Black', system-ui, sans-serif;

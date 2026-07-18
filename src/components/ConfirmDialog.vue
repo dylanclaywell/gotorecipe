@@ -46,14 +46,14 @@ function onBackdropClick(e: MouseEvent) {
     <div class="mt-5 flex justify-end gap-3">
       <button
         type="button"
-        class="focus-ring rounded-md border-2 border-ink bg-paper px-4 py-2 font-display text-sm tracking-tight text-ink shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+        class="focus-ring rounded-md border-2 border-ink bg-paper hover:bg-paper-hover px-4 py-2 font-display text-sm tracking-tight text-ink shadow-(--shadow-hard) active:translate-y-1 active:translate-x-1 active:shadow-none"
         @click="emit('cancel')"
       >
         Cancel
       </button>
       <button
         type="button"
-        class="focus-ring rounded-md border-2 border-ink bg-danger px-4 py-2 font-display text-sm tracking-tight text-on-primary shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+        class="focus-ring rounded-md border-2 border-ink bg-danger hover:bg-danger-hover px-4 py-2 font-display text-sm tracking-tight text-on-primary shadow-(--shadow-hard) active:translate-y-1 active:translate-x-1 active:shadow-none"
         @click="emit('confirm')"
       >
         {{ confirmLabel }}
