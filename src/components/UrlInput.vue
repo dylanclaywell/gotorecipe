@@ -42,11 +42,11 @@ async function paste() {
         :autofocus="autofocus"
         placeholder="Paste a recipe link…"
         aria-label="Recipe URL"
-        class="card-hard w-full py-3.5 pl-4 pr-24 font-mono text-base text-ink placeholder:text-ink/40 focus:shadow-[var(--shadow-hard-lg)] focus:outline-none"
+        class="card-hard w-full py-4 pl-4 pr-24 font-mono text-base text-ink placeholder:text-ink/40 focus:outline-none"
       />
       <button
         type="button"
-        class="press absolute right-2 top-1/2 -translate-y-1/2 rounded-sm border-2 border-ink bg-muted px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wide hover:-translate-y-[calc(50%+2px)] hover:shadow-[var(--shadow-hard-sm)] active:-translate-y-1/2 active:shadow-none"
+        class="absolute right-2 top-1/2 -translate-y-1/2 rounded-sm border-2 border-ink bg-muted px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wide hover:-translate-y-[calc(50%+2px)] hover:shadow-(--shadow-hard-sm) active:-translate-y-1/2 active:shadow-none focus:outline-none"
         @click="paste"
       >
         Paste
@@ -55,7 +55,7 @@ async function paste() {
 
     <button
       type="submit"
-      class="press flex items-center justify-center gap-2 rounded-md border-2 border-ink bg-primary px-6 py-3.5 font-display text-lg tracking-tight text-on-primary shadow-[var(--shadow-hard)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard-lg)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+      class="flex items-center justify-center gap-2 rounded-md border-2 border-ink bg-primary hover:bg-primary-hover px-6 py-3.5 font-display text-lg tracking-tight text-on-primary shadow-(--shadow-hard) active:translate-y-1 active:translate-x-1 active:shadow-none focus:outline-none"
     >
       Go
     </button>

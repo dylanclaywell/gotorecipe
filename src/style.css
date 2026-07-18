@@ -9,6 +9,7 @@
   --color-paper: #fbf4e6; /* cream: page + card background */
   --color-primary: #db512b; /* brick tomato: header, primary CTAs, highlight */
   --color-on-primary: #fbf4e6; /* text/icons on primary */
+  --color-primary-hover: #c14a26; /* tomato hover: primary CTAs */
   --color-accent: #6e8b4e; /* herb/basil green: done + save state */
   --color-on-accent: #fbf4e6; /* text/icons on accent */
   --color-danger: #b23a1d; /* deep red: destructive actions, errors */
@@ -76,10 +77,4 @@ body {
   border-radius: var(--radius-card);
   background: var(--color-paper);
   box-shadow: var(--shadow-hard);
-}
-
-@utility press {
-  transition:
-    transform 120ms ease,
-    box-shadow 120ms ease;
 }

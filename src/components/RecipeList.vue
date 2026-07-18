@@ -67,7 +67,7 @@ function onConfirm() {
       <li
         v-for="item in items"
         :key="item.recipe.sourceUrl"
-        class="press flex items-center gap-3 rounded-card border-2 border-ink bg-paper px-3 py-2.5 hover:-translate-y-0.5 hover:shadow-(--shadow-hard-sm)"
+        class="flex items-center gap-3 rounded-card border-2 border-ink bg-paper px-3 py-2.5 hover:-translate-y-0.5 hover:shadow-(--shadow-hard-sm)"
       >
         <button
           type="button"

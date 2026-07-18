@@ -11,7 +11,7 @@ import LogoMark from '@/components/LogoMark.vue'
       >
         <RouterLink
           to="/"
-          class="press flex items-center gap-2.5 hover:-translate-y-0.5"
+          class="flex items-center gap-2.5 hover:-translate-y-0.5"
           aria-label="GoToRecipe home"
         >
           <LogoMark class="h-9 w-9" />

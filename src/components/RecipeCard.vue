@@ -64,14 +64,14 @@ function print() {
               ? 'bg-ink text-paper'
               : 'bg-paper text-ink'
           "
-          class="press rounded-md border-2 border-ink px-4 py-2 font-display text-sm tracking-tight shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+          class="rounded-md border-2 border-ink px-4 py-2 font-display text-sm tracking-tight shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
           @click="store.toggleSave(recipe)"
         >
           {{ store.isSaved(recipe.sourceUrl) ? '★ Saved' : '☆ Save' }}
         </button>
         <button
           type="button"
-          class="press rounded-md border-2 border-ink bg-paper px-4 py-2 font-display text-sm tracking-tight text-ink shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+          class="rounded-md border-2 border-ink bg-paper px-4 py-2 font-display text-sm tracking-tight text-ink shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
           @click="print"
         >
           Print
@@ -103,9 +103,7 @@ function print() {
       </div>
     </dl>
 
-    <div
-      class="recipe-body grid gap-8 p-6 sm:grid-cols-[minmax(0,1fr)_1.4fr]"
-    >
+    <div class="recipe-body grid gap-8 p-6 sm:grid-cols-[minmax(0,1fr)_1.4fr]">
       <!-- Ingredients -->
       <section aria-labelledby="ing-heading" class="flex flex-col gap-3">
         <h2
