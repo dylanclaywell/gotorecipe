@@ -61,17 +61,17 @@ function print() {
           :aria-pressed="store.isSaved(recipe.sourceUrl)"
           :class="
             store.isSaved(recipe.sourceUrl)
-              ? 'bg-ink text-paper'
-              : 'bg-paper text-ink'
+              ? 'bg-accent hover:bg-accent-hover text-on-accent'
+              : 'bg-paper hover:bg-paper-hover text-ink'
           "
-          class="rounded-md border-2 border-ink px-4 py-2 font-display text-sm tracking-tight shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+          class="rounded-md border-2 border-ink px-4 py-2 font-display text-sm tracking-tight shadow-(--shadow-hard) active:translate-y-1 active:translate-x-1 active:shadow-none focus:outline-none"
           @click="store.toggleSave(recipe)"
         >
           {{ store.isSaved(recipe.sourceUrl) ? '★ Saved' : '☆ Save' }}
         </button>
         <button
           type="button"
-          class="rounded-md border-2 border-ink bg-paper px-4 py-2 font-display text-sm tracking-tight text-ink shadow-[var(--shadow-hard-sm)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-hard)] active:translate-y-0 active:shadow-[var(--shadow-hard-sm)]"
+          class="rounded-md border-2 border-ink bg-paper hover:bg-paper-hover px-4 py-2 font-display text-sm tracking-tight text-ink shadow-(--shadow-hard) active:translate-y-1 active:translate-x-1 active:shadow-none focus:outline-none"
           @click="print"
         >
           Print

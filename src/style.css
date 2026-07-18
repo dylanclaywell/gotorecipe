@@ -11,7 +11,9 @@
   --color-on-primary: #fbf4e6; /* text/icons on primary */
   --color-primary-hover: #c14a26; /* tomato hover: primary CTAs */
   --color-accent: #6e8b4e; /* herb/basil green: done + save state */
+  --color-accent-hover: #5e7742; /* basil hover: saved state */
   --color-on-accent: #fbf4e6; /* text/icons on accent */
+  --color-paper-hover: #f1e8d2; /* cream hover: paper-filled buttons */
   --color-danger: #b23a1d; /* deep red: destructive actions, errors */
   --color-muted: #ebe2cd; /* warm tan: paste button, skeletons */
 
