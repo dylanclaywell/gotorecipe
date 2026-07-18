@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /recipe
+
+Sitemap: https://gotorecipe.pages.dev/sitemap.xml
