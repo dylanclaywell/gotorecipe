@@ -21,10 +21,16 @@
 
   --radius-card: 6px;
 
-  /* hard, un-blurred offset shadows — the signature */
-  --shadow-hard: 4px 4px 0 var(--color-ink);
-  --shadow-hard-lg: 7px 7px 0 var(--color-ink);
-  --shadow-hard-sm: 2px 2px 0 var(--color-ink);
+  /* hard, un-blurred offset shadows — the signature. Stacked 1px steps fill
+     the diagonal gap so it reads as a solid angled slab; a single-offset
+     shadow leaves its rounded corner peeking behind rounded elements. */
+  --shadow-hard: 1px 1px 0 var(--color-ink), 2px 2px 0 var(--color-ink),
+    3px 3px 0 var(--color-ink), 4px 4px 0 var(--color-ink);
+  --shadow-hard-lg: 1px 1px 0 var(--color-ink), 2px 2px 0 var(--color-ink),
+    3px 3px 0 var(--color-ink), 4px 4px 0 var(--color-ink),
+    5px 5px 0 var(--color-ink), 6px 6px 0 var(--color-ink),
+    7px 7px 0 var(--color-ink);
+  --shadow-hard-sm: 1px 1px 0 var(--color-ink), 2px 2px 0 var(--color-ink);
 }
 
 html {
