@@ -22,7 +22,7 @@ import LogoMark from '@/components/LogoMark.vue'
           </span>
         </RouterLink>
         <span
-          class="hidden font-mono text-xs text-ink/60 sm:inline"
+          class="hidden font-mono text-xs text-ink/70 sm:inline"
           aria-hidden="true"
         >
           the recipe, nothing else
@@ -36,7 +36,7 @@ import LogoMark from '@/components/LogoMark.vue'
 
     <footer class="no-print border-t-2 border-ink">
       <div
-        class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-2 px-5 py-4 font-mono text-xs text-ink/60"
+        class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-2 px-5 py-4 font-mono text-xs text-ink/70"
       >
         <span>No ads · No account · No life story</span>
         <span>Works offline once installed</span>

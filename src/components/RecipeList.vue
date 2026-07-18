@@ -56,7 +56,7 @@ function onConfirm() {
       <button
         v-if="items.length"
         type="button"
-        class="font-mono text-xs text-ink/60 underline decoration-2 underline-offset-2 hover:text-danger"
+        class="font-mono text-xs text-ink/70 underline decoration-2 underline-offset-2 hover:text-danger"
         @click="pending = { type: 'clear' }"
       >
         {{ clearLabel ?? 'Clear all' }}
@@ -77,7 +77,7 @@ function onConfirm() {
           <span class="block truncate font-sans font-medium text-ink">
             {{ item.recipe.title }}
           </span>
-          <span class="block font-mono text-xs text-ink/50">
+          <span class="block font-mono text-xs text-ink/70">
             {{ hostOf(item.recipe.sourceUrl) }}
           </span>
         </button>

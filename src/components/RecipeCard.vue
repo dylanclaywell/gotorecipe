@@ -50,7 +50,7 @@ function print() {
           :href="recipe.sourceUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-fit font-mono text-sm text-on-primary/75 underline decoration-2 underline-offset-2 hover:text-on-primary"
+          class="w-fit font-mono text-sm text-on-primary underline decoration-2 underline-offset-2 hover:text-on-primary/80"
         >
           {{ hostOf(recipe.sourceUrl) }} ↗
         </a>
@@ -95,7 +95,7 @@ function print() {
     >
       <div v-for="m in meta" :key="m.label" class="flex flex-col">
         <dt
-          class="font-mono text-[0.68rem] uppercase tracking-widest text-ink/50"
+          class="font-mono text-[0.68rem] uppercase tracking-widest text-ink/70"
         >
           {{ m.label }}
         </dt>
@@ -139,7 +139,7 @@ function print() {
                 class="font-mono text-sm leading-snug"
                 :class="
                   ingredients.done.has(i)
-                    ? 'text-ink/40 line-through'
+                    ? 'text-ink/70 line-through'
                     : 'text-ink'
                 "
               >
@@ -176,7 +176,7 @@ function print() {
               <p
                 class="pt-0.5 font-sans leading-relaxed"
                 :class="
-                  steps.done.has(i) ? 'text-ink/40 line-through' : 'text-ink'
+                  steps.done.has(i) ? 'text-ink/70 line-through' : 'text-ink'
                 "
               >
                 {{ step }}

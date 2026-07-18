@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, useId, watch } from 'vue'
+
+const messageId = useId()
 
 const props = withDefaults(
   defineProps<{
@@ -39,10 +41,11 @@ function onBackdropClick(e: MouseEvent) {
   <dialog
     ref="dialog"
     class="confirm card-hard m-auto p-6"
+    :aria-labelledby="messageId"
     @cancel="onCancelEvent"
     @click="onBackdropClick"
   >
-    <p class="font-sans text-lg text-ink">{{ message }}</p>
+    <p :id="messageId" class="font-sans text-lg text-ink">{{ message }}</p>
     <div class="mt-5 flex justify-end gap-3">
       <button
         type="button"

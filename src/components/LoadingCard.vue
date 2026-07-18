@@ -4,7 +4,7 @@ defineProps<{ host: string }>()
 
 <template>
   <div class="card-hard flex flex-col gap-5 p-6" aria-busy="true">
-    <p class="font-mono text-sm text-ink/60">
+    <p class="font-mono text-sm text-ink/70">
       Decluttering <span class="text-ink">{{ host }}</span
       >…
     </p>

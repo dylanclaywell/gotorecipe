@@ -7,11 +7,11 @@
      favicon/manifest color) can key off one place. */
   --color-ink: #26201a; /* warm near-black: borders, text */
   --color-paper: #fbf4e6; /* cream: page + card background */
-  --color-primary: #db512b; /* brick tomato: header, primary CTAs, highlight */
+  --color-primary: #c0421f; /* brick tomato: header, primary CTAs, highlight (AA 4.5:1 on cream) */
   --color-on-primary: #fbf4e6; /* text/icons on primary */
-  --color-primary-hover: #c14a26; /* tomato hover: primary CTAs */
-  --color-accent: #6e8b4e; /* herb/basil green: done + save state */
-  --color-accent-hover: #5e7742; /* basil hover: saved state */
+  --color-primary-hover: #a83a1b; /* tomato hover */
+  --color-accent: #5a763d; /* herb/basil green: done + save state (AA 4.5:1 on cream) */
+  --color-accent-hover: #4e6634; /* basil hover */
   --color-on-accent: #fbf4e6; /* text/icons on accent */
   --color-paper-hover: #f1e8d2; /* cream hover: paper-filled buttons */
   --color-danger: #b23a1d; /* deep red: destructive actions, errors */

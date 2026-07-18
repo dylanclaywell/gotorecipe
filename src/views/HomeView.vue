@@ -34,7 +34,7 @@ function go(url: string) {
     <UrlInput autofocus @submit="go" />
 
     <ul
-      class="flex flex-wrap gap-x-5 gap-y-1 font-mono text-xs uppercase tracking-wide text-ink/60"
+      class="flex flex-wrap gap-x-5 gap-y-1 font-mono text-xs uppercase tracking-wide text-ink/70"
     >
       <li>→ No account</li>
       <li>→ No tracking</li>
