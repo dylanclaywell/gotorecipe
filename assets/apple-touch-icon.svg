@@ -1,6 +1,6 @@
 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <rect width="512" height="512" fill="#FBF4E6" />
-  <g transform="translate(76 69) scale(9)">
+  <g transform="translate(46 38) scale(10.5)">
     <ellipse cx="20" cy="25" rx="14" ry="11" fill="#C0421F" stroke="#26201A" stroke-width="2.5" />
     <g fill="#5A763D" stroke="#26201A" stroke-width="2.5" stroke-linejoin="round">
       <path d="M 0,0 C -1.6666667,-1.8 -1.6666667,-2.5632881 0,-4.3632881 1.6666667,-2.5632881 1.6666667,-1.8 0,0 Z" transform="translate(20,15)" />
