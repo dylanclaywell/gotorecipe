@@ -57,6 +57,15 @@ body {
     outline-offset: 2px;
   }
 
+  /* iOS Safari only fires :active on tap when the element carries a pointer
+     cursor (or a touch listener) — without this, the hard-shadow press
+     animations never trigger on mobile. */
+  button,
+  a[href],
+  [role='button'] {
+    cursor: pointer;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
