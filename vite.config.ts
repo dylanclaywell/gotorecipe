@@ -15,7 +15,7 @@ export default defineConfig({
         name: 'GoToRecipe',
         short_name: 'GoToRecipe',
         description: 'Paste a recipe link, go straight to the recipe.',
-        theme_color: '#DB512B',
+        theme_color: '#c0421f',
         background_color: '#FBF4E6',
         display: 'standalone',
         start_url: '/',
